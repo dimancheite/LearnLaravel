@@ -11,6 +11,14 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/order', 'OrderController@order')->name('order');
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('home');
